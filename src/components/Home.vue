@@ -18,13 +18,17 @@
           background-color="#333744"
           text-color="#fff"
           active-text-color="#409EFF"
-          :style="menushow? 'width:65px;':'width:200px'"
           :collapse="menushow"
           :collapse-transition="false"
           :unique-opened="true"
           :router="true"
         >
-          <el-submenu :index="item.id + ''" v-for="(item,k) in menuList" :key="item.id">
+          <el-submenu
+            :index="item.id + ''"
+            v-for="(item,k) in menuList"
+            :key="item.id"
+            :style="menushow? 'width:65px;':'width:200px'"
+          >
             <template slot="title">
               <i :class="'iconfont icon-' + menuicon[k]"></i>
               <span>{{item.authName}}</span>
